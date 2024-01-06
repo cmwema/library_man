@@ -3,7 +3,8 @@
 ## Overview
 
 This web application is designed to streamline the operations of a local library, providing essential features for efficient library management. The application is specifically tailored for use by librarians, simplifying tasks related to book tracking, member management, and transaction handling.
-![image](https://github.com/cmwema/library_man/assets/81985376/9e07ffd1-9305-490f-9405-52c7b2a2dada)
+![image](https://github.com/cmwema/library_man/assets/81985376/10007fa3-cb69-4dd7-8f58-eb71ae41250c)
+
 
 
 ## Functionalities
