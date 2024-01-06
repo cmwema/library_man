@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Sign Up{% endblock title %}
 {% block content %}
-<h2>Sign Up</h2>
-<form method="post">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Sign Up</button>
-</form>
+<div class="border rounded p-4 bg-gray-100 flex flex-col gap-4   items-center">
+    <h2 class="text-2xl font-medium">Sign Up</h2>
+    <form class="flex flex-col gap-4 items-center   " method="post">
+        {% csrf_token %}
+        <p class="flex w-full gap-4 font-medium justify-between">
+        <label for="id_username">Username:</label>
+        <input  class="px-2 border-2 border-black rounded " type="text" name="username" maxlength="150" autofocus="" required="" aria-describedby="id_username_helptext" id="id_username">
+        </p>
+        <p class="flex w-full gap-4 font-medium justify-between">
+        <label for="id_password1">Password:</label>
+        <input  class="px-2 border-2 border-black rounded " type="password" name="password1" autocomplete="new-password" required="" aria-describedby="id_password1_helptext" id="id_password1">
+        </p>
+        <p class="flex w-full gap-4 font-medium justify-between">
+        <label for="id_password2">Password confirmation:</label>
+        <input class="px-2 border-2 border-black rounded "  type="password" name="password2" autocomplete="new-password" required="" aria-describedby="id_password2_helptext" id="id_password2">
+        </p>
+        <button class="w-max bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700" type="submit">Sign Up</button>
+    </form>
+</div>
 {% endblock content %}
