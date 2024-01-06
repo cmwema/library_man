@@ -14,14 +14,20 @@ This web application is designed to streamline the operations of a local library
 #### 1.1 Books
 - Maintain a catalog of books with the ability to track stock levels.
 - Perform CRUD operations on books.
+- ![image](https://github.com/cmwema/library_man/assets/81985376/e380faaa-7107-4676-812a-e778795fc647)
+
 
 #### 1.2 Members
 - Manage a list of library members.
 - Perform CRUD operations on members.
+- ![image](https://github.com/cmwema/library_man/assets/81985376/567700d7-5336-4ce2-b2a1-248df25d9e9f)
+
 
 #### 1.3 Transactions
 - Record and manage transactions related to book issuances and returns.
 - Implement rent fee charges on book returns.
+- ![image](https://github.com/cmwema/library_man/assets/81985376/358d1b15-ffdb-411d-9ee9-6a2ce52a14b4)
+
 
 ### 2. Use Cases
 
