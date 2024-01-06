@@ -3,13 +3,13 @@
 {% block content %}
 <div class="w-full flex justify-between p-4 md:px-10">
     <ul class="flex gap-4">
-        <li><a href="{% url 'home' %}">Books</a></li>
-        <li><a href="{% url 'members' %}">Members</a></li>
-        <li><a href="{% url 'issues' %}">Issues</a></li>
+        <li><a href="{% url 'home' %}" class="font-medium hover:underline hover:text-gray-500">Books</a></li>
+        <li><a href="{% url 'members' %}" class="font-medium hover:underline hover:text-gray-500">Members</a></li>
+        <li><a href="{% url 'issues' %}" class="font-medium hover:underline hover:text-gray-500">Issues</a></li>
     </ul>
-    <ul>
-        <li><a href="/">New</a></li>
-    </ul>
+    {% block new %}
+    {% endblock new %}
+
 </div>
 {% block table %}
 {% endblock table %}
