@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+{% block table %}
+<div class="w-full h-full p-4">
+    <table class="w-full border border-collapse">
+        <thead>
+        <tr class="bg-gray-100 text-2xl">
+            <th colspan="7" class="p-4">All Books</th>
+        </tr>
+            <tr class="bg-gray-100">
+                <th class="border p-2 text-start">Id</th>
+                <th class="border p-2 text-start">Title</th>
+                <th class="border p-2 text-start">Author</th>
+                <th class="border p-2 text-start">Quantity</th>
+                <th class="border p-2 text-start"></th>
+                <th class="border p-2 text-start"></th>
+                <th class="border p-2 text-start"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in book_list %}
+            <tr class="bg-white hover:bg-gray-100">
+                <td class="border p-2 text-start">{{ book.id }}</td>
+                <td class="border p-2 text-start">{{ book.title }}</td>
+                <td class="border p-2 text-start">{{ book.author }}</td>
+                <td class="border p-2 text-start">{{ book.quantity }}</td>
+                <td class="border p-2 text-start"><button class="w-full bg-gray-100 rounded hover:bg-gray-200">issue</button></td>
+                <td class="border p-2 text-start"><button class="w-full bg-gray-100 rounded hover:bg-gray-200">edit</button></td>
+                <td class="border p-2 text-start"><button class="w-full bg-red-100 rounded hover:bg-red-200">del</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock table %}

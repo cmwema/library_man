@@ -8,7 +8,7 @@
 </head>
 <body class="flex flex-col w-screen min-h-screen gap-2">
     <header class="flex justify-between items-center p-4 bg-gray-100 shadow-lg h-20">
-        <h1 class="font-bold text-3xl">Library Management System.</h1>
+        <h1 class="font-bold text-xl md:text-3xl">Library Management System.</h1>
         <div class="flex gap-4 p-2 items-center justify-center">
             {% if user.is_authenticated %}
                 <form method="POST" action="{% url 'logout' %}">
@@ -18,7 +18,7 @@
             {% endif %}
         </div>
     </header>
-    <main class="min-h-[80vh] flex flex-col items-center justify-center">
+    <main class="min-h-[80vh]">
         {% block content %}
         {% endblock content%}
     </main>

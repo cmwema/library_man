@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-    <h1>Welcome Home</h1>
+<div class="w-full flex justify-between p-4 md:px-10">
+    <ul class="flex gap-4">
+        <li><a href="{% url 'home' %}">Books</a></li>
+        <li><a href="{% url 'members' %}">Members</a></li>
+        <li><a href="{% url 'issues' %}">Issues</a></li>
+    </ul>
+    <ul>
+        <li><a href="/">New</a></li>
+    </ul>
+</div>
+{% block table %}
+{% endblock table %}
+
 {% endblock content %}

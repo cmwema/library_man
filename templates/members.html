@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% block table %}
+<div class="w-full h-full p-4">
+    <table class="w-full border border-collapse">
+        <thead>
+        <tr class="bg-gray-100 text-2xl">
+            <th colspan="5" class="p-4">All Members</th>
+        </tr>
+            <tr class="bg-gray-100">
+                <th class="border p-2 text-start">Id</th>
+                <th class="border p-2 text-start">Name</th>
+                <th class="border p-2 text-start">Debt</th>
+                <th class="border p-2 text-start"></th>
+                <th class="border p-2 text-start"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in member_list %}
+            <tr class="bg-white hover:bg-gray-100">
+                <td class="border p-2 text-start">{{ member.id }}</td>
+                <td class="border p-2 text-start">{{ member.name }}</td>
+                <td class="border p-2 text-start">{{ member.debt }}</td>
+                <td class="border p-2 text-start"><button class="w-full bg-gray-100 rounded hover:bg-gray-200">edit</button></td>
+                <td class="border p-2 text-start"><button class="w-full bg-red-100 rounded hover:bg-red-200">del</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock table %}
