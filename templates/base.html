@@ -11,19 +11,10 @@
         <h1 class="font-bold text-3xl">Library Management System.</h1>
         <div class="flex gap-4 p-2 items-center justify-center">
             {% if user.is_authenticated %}
-            <small class="font-medium capitalize text-2xl">{{ user.username }}</small>
                 <form method="POST" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <input class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700" type="submit" value="Log Out">
+                    <input class="bg-red-700 border-2 border-red-700 rounded p-2 hover:bg-red-700 hover:text-gray-300 hover:border-red-700 cursor-pointer" type="submit" value="Log Out">
                 </form>
-
-            {% else %}
-                <button class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700">
-                    <a href="{% url 'login' %}">Log In</a>
-                </button>
-                <button class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700">
-                    <a href="{% url 'signup' %}">Sign Up</a>
-                </button>
             {% endif %}
         </div>
     </header>
