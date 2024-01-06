@@ -2,4 +2,4 @@ from django.contrib import admin
 from .models import Member
 
 
-admin.register(Member)
+admin.site.register(Member)

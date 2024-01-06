@@ -3,3 +3,5 @@ from .models import Book
 
 
 admin.register(Book)
+
+admin.site.register(Book)
