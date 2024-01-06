@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Log In{% endblock title %}
 {% block content %}
-<h2>Log In</h2>
-<form method="post">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Log In</button>
-</form>
+<div class="border rounded p-4 bg-gray-100 flex flex-col gap-4   items-center">
+    <h2 class="text-2xl font-medium">Log In</h2>
+    <form class="flex flex-col gap-4 items-center   " method="post">{% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="fagCqvLBhB7qcFgao2iRoMno2GVD1aBTAL61XaOF7q1CGaa3Qx9aFPSKRZBmEnc9">
+        <p class="flex w-full gap-4 font-medium">
+        <label for="id_username">Username:</label>
+        <input class="px-2 border-2 border-black rounded " type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+        </p>
+        <p  class="flex w-full gap-4 font-medium">
+        <label for="id_password">Password:</label>
+        <input class="px-2 border-2 border-black rounded " type="password" name="password" autocomplete="current-password" required="" id="id_password">
+        </p>
+        <button class="w-max bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700" type="submit">Log In</button>
+    </form>
+</div>
 {% endblock content %}

@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Library | {% block title %} Home {% endblock title%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header></header>
-    <main>
+<body class="flex flex-col w-screen min-h-screen gap-2">
+    <header class="flex justify-between items-center p-4 bg-gray-100 shadow-lg h-20">
+        <h1 class="font-bold text-3xl">Library Management System.</h1>
+        <div class="flex gap-4 p-2 items-center justify-center">
+            {% if user.is_authenticated %}
+                Hi {{ user.username }}!
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700" type="submit" value="Log Out">
+                </form>
+
+            {% else %}
+                <button class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700">
+                    <a href="{% url 'login' %}">Log In</a>
+                </button>
+                <button class="bg-gray-400 border-2 border-gray-400 rounded p-2 hover:bg-gray-700 hover:text-gray-300 hover:border-gray-700">
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                </button>
+            {% endif %}
+        </div>
+    </header>
+    <main class="min-h-[80vh] flex flex-col items-center justify-center">
         {% block content %}
         {% endblock content%}
     </main>
-    <footer></footer>
+    <footer class="flex justify-center items-center text-gray-400">
+        <small>&copy;<span id="year"></span> <a href="https://github.com/cmwema/">Caleb Mwema</a> </small>
+    </footer>
+
+    <script>
+        const date = new Date().getFullYear();
+        const dateTag = document.getElementById("year");
+        dateTag.innerHTML = date;
+    </script>
+
 </body>
 </html>
